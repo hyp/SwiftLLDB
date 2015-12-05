@@ -6,13 +6,6 @@
 import XCTest
 import SwiftLLDB
 
-extension NSPipe {
-    func readString() -> String {
-        let data = self.fileHandleForReading.readDataToEndOfFile()
-        return NSString(data: data, encoding: NSUTF8StringEncoding) as! String
-    }
-}
-
 class SwiftLLDBTests: XCTestCase {
     
     override func setUp() {
