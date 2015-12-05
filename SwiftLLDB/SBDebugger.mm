@@ -74,11 +74,11 @@ FILE *dupFileHanle(NSFileHandle *fileHandle, const char *mode, NSError **error) 
     return YES;
 }
 
-- (void) runInterpreter: (BOOL)autoHandleEvents spawnThread:(BOOL)spawnThread {
+- (void) runCommandInterpreter: (BOOL)autoHandleEvents spawnThread:(BOOL)spawnThread {
     debugger.RunCommandInterpreter(autoHandleEvents, spawnThread);
 }
 
-- (BOOL) runRepl: (LanguageType)languageType options:(nonnull NSString *)replOptions error:(NSError **)error {
+- (BOOL) runREPL: (LanguageType)languageType options:(nonnull NSString *)replOptions error:(NSError **)error {
     if (error)
         *error = NULL;
     const char *options = [replOptions UTF8String];

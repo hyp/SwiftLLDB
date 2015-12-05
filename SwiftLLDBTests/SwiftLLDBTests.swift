@@ -33,7 +33,7 @@ class SwiftLLDBTests: XCTestCase {
         do {
             try d.setInputFileHandle(inputPipe.fileHandleForReading)
             try d.setOutputFileHandle(outputPipe.fileHandleForWriting)
-            try d.runRepl(.Swift, options: "")
+            try d.runREPL(.Swift, options: "")
         } catch {
             print("REPL failure: \(error)")
             XCTAssert(false)

@@ -10,7 +10,7 @@ import SwiftLLDB
 SBDebugger.setUp()
 let d = SBDebugger()
 do {
-    try d.runRepl(.Swift, options: "")
+    try d.runREPL(.Swift, options: "")
 } catch {
     print("REPL failure: \(error)")
 }

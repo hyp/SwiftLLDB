@@ -21,8 +21,8 @@ typedef NS_ENUM(NSUInteger, LanguageType) {
 - (BOOL) setOutputFileHandle: (nonnull NSFileHandle *)fileHandle error:(NSError **)error;
 - (BOOL) setErrorFileHanlde: (nonnull NSFileHandle *)fileHandle error:(NSError **)error;
 
-- (void) runInterpreter: (BOOL)autoHandleEvents spawnThread:(BOOL)spawnThread;
-- (BOOL) runRepl: (LanguageType)languageType options:(nonnull NSString *)replOptions error:(NSError **)error;
+- (void) runCommandInterpreter: (BOOL)autoHandleEvents spawnThread:(BOOL)spawnThread;
+- (BOOL) runREPL: (LanguageType)languageType options:(nonnull NSString *)replOptions error:(NSError **)error;
 
 + (void) setUp;
 + (void) tearDown;
