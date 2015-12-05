@@ -24,7 +24,7 @@
     debugger.SetAsync(async);
 }
 
-- (BOOL) getAsync {
+- (BOOL) isAsync {
     return debugger.GetAsync();
 }
 
@@ -67,7 +67,7 @@ FILE *dupFileHanle(NSFileHandle *fileHandle, const char *mode, NSError **error) 
     return YES;
 }
 
-- (BOOL) setErrorFileHanlde: (nonnull NSFileHandle *)fileHandle error:(NSError **)error {
+- (BOOL) setErrorFileHandle: (nonnull NSFileHandle *)fileHandle error:(NSError **)error {
     FILE *f = dupFileHanle(fileHandle, "w", error);
     if (!f) { return NO; }
     debugger.SetErrorFileHandle(f, /*transfer_ownership=*/true);

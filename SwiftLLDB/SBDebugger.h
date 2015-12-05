@@ -12,17 +12,15 @@ typedef NS_ENUM(NSUInteger, LanguageType) {
 };
 
 @interface SBDebugger : NSObject
-- (nonnull id) init;
 
-- (void) setAsync: (BOOL)async;
-- (BOOL) getAsync;
+@property (nonatomic, getter=isAsync) BOOL async;
 
-- (BOOL) setInputFileHandle: (nonnull NSFileHandle *)fileHandle error:(NSError **)error;
-- (BOOL) setOutputFileHandle: (nonnull NSFileHandle *)fileHandle error:(NSError **)error;
-- (BOOL) setErrorFileHanlde: (nonnull NSFileHandle *)fileHandle error:(NSError **)error;
+- (BOOL) setInputFileHandle: (NSFileHandle *)fileHandle error:(NSError **)error;
+- (BOOL) setOutputFileHandle: (NSFileHandle *)fileHandle error:(NSError **)error;
+- (BOOL) setErrorFileHandle: (NSFileHandle *)fileHandle error:(NSError **)error;
 
 - (void) runCommandInterpreter: (BOOL)autoHandleEvents spawnThread:(BOOL)spawnThread;
-- (BOOL) runREPL: (LanguageType)languageType options:(nonnull NSString *)replOptions error:(NSError **)error;
+- (BOOL) runREPL: (LanguageType)languageType options:(NSString *)replOptions error:(NSError **)error;
 
 + (void) setUp;
 + (void) tearDown;
