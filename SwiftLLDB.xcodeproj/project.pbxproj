@@ -14,6 +14,7 @@
 		FA6D3C5C1C130576007302C2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6D3C5B1C130576007302C2 /* main.swift */; };
 		FA6D3C6B1C1309B8007302C2 /* SwiftLLDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6D3C6A1C1309B8007302C2 /* SwiftLLDBTests.swift */; };
 		FA6D3C6D1C1309B8007302C2 /* SwiftLLDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6D3C031C122760007302C2 /* SwiftLLDB.framework */; };
+		FA6D3C8F1C131AE7007302C2 /* LLDB.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA6D3C531C130439007302C2 /* LLDB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,12 +30,13 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		FA6D3C571C130576007302C2 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
+				FA6D3C8F1C131AE7007302C2 /* LLDB.framework in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -483,6 +485,7 @@
 				FA6D3C5F1C130576007302C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA6D3C701C1309B8007302C2 /* Build configuration list for PBXNativeTarget "SwiftLLDBTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +494,7 @@
 				FA6D3C721C1309B8007302C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
