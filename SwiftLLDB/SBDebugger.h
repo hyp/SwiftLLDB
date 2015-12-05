@@ -24,8 +24,8 @@ typedef NS_ENUM(NSUInteger, LanguageType) {
 - (void) runInterpreter: (BOOL)autoHandleEvents spawnThread:(BOOL)spawnThread;
 - (BOOL) runRepl: (LanguageType)languageType options:(nonnull NSString *)replOptions error:(NSError **)error;
 
-+ (void) initialize;
-+ (void) terminate;
++ (void) setUp;
++ (void) tearDown;
 @end
 
 NS_ASSUME_NONNULL_END

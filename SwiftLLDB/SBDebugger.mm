@@ -94,11 +94,11 @@ FILE *dupFileHanle(NSFileHandle *fileHandle, const char *mode, NSError **error) 
     return YES;
 }
 
-+ (void) initialize {
++ (void) setUp {
     lldb::SBDebugger::Initialize();
 }
 
-+ (void) terminate {
++ (void) tearDown {
     lldb::SBDebugger::Terminate();
 }
 

@@ -10,11 +10,11 @@ class SwiftLLDBTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        SBDebugger.initialize()
+        SBDebugger.setUp()
     }
     
     override func tearDown() {
-        SBDebugger.terminate()
+        SBDebugger.tearDown()
         super.tearDown()
     }
     
