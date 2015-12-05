@@ -14,7 +14,7 @@
 		FA6D3C5C1C130576007302C2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6D3C5B1C130576007302C2 /* main.swift */; };
 		FA6D3C6B1C1309B8007302C2 /* SwiftLLDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6D3C6A1C1309B8007302C2 /* SwiftLLDBTests.swift */; };
 		FA6D3C6D1C1309B8007302C2 /* SwiftLLDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6D3C031C122760007302C2 /* SwiftLLDB.framework */; };
-		FA6D3C8F1C131AE7007302C2 /* LLDB.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA6D3C531C130439007302C2 /* LLDB.framework */; };
+		FA6D3C8F1C131AE7007302C2 /* LLDB.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = FA6D3C531C130439007302C2 /* LLDB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +28,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FA6D3C571C130576007302C2 /* CopyFiles */ = {
+		FA6D3C571C130576007302C2 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				FA6D3C8F1C131AE7007302C2 /* LLDB.framework in CopyFiles */,
+				FA6D3C8F1C131AE7007302C2 /* LLDB.framework in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -169,7 +170,7 @@
 			buildPhases = (
 				FA6D3C551C130576007302C2 /* Sources */,
 				FA6D3C561C130576007302C2 /* Frameworks */,
-				FA6D3C571C130576007302C2 /* CopyFiles */,
+				FA6D3C571C130576007302C2 /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -334,6 +335,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SYMROOT = "${SRCROOT}/../build";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -374,6 +376,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SYMROOT = "${SRCROOT}/../build";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -398,6 +401,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
@@ -418,6 +422,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hypstuff.SwiftLLDB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
