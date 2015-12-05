@@ -36,7 +36,7 @@ class SwiftLLDBTests: XCTestCase {
             try d.runREPL(.Swift, options: "")
         } catch {
             print("REPL failure: \(error)")
-            XCTAssert(false)
+            XCTFail()
         }
         
         XCTAssertEqual(result, "Line 0\r\nLine 1\r\nLine 2\r\nLine 3\r\nLine 4\r\n")
