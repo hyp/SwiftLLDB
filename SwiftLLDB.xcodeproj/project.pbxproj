@@ -14,11 +14,18 @@
 		FA6D3C5C1C130576007302C2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6D3C5B1C130576007302C2 /* main.swift */; };
 		FA6D3C6B1C1309B8007302C2 /* SwiftLLDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6D3C6A1C1309B8007302C2 /* SwiftLLDBTests.swift */; };
 		FA6D3C6D1C1309B8007302C2 /* SwiftLLDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6D3C031C122760007302C2 /* SwiftLLDB.framework */; };
-		FA6D3C8F1C131AE7007302C2 /* LLDB.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = FA6D3C531C130439007302C2 /* LLDB.framework */; };
+		FA6D3CBA1C1353F3007302C2 /* LLDB.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA6D3C531C130439007302C2 /* LLDB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		FA6D3C6E1C1309B8007302C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA6D3BFA1C122760007302C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA6D3C021C122760007302C2;
+			remoteInfo = SwiftLLDB;
+		};
+		FA6D3CBB1C135467007302C2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FA6D3BFA1C122760007302C2 /* Project object */;
 			proxyType = 1;
@@ -34,9 +41,18 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				FA6D3C8F1C131AE7007302C2 /* LLDB.framework in Copy Files */,
 			);
 			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA6D3CB91C1353E4007302C2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				FA6D3CBA1C1353F3007302C2 /* LLDB.framework in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -154,6 +170,7 @@
 				FA6D3BFF1C122760007302C2 /* Frameworks */,
 				FA6D3C001C122760007302C2 /* Headers */,
 				FA6D3C011C122760007302C2 /* Resources */,
+				FA6D3CB91C1353E4007302C2 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -175,6 +192,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				FA6D3CBC1C135467007302C2 /* PBXTargetDependency */,
 			);
 			name = TestSwiftRepl;
 			productName = TestSwiftRepl;
@@ -288,6 +306,11 @@
 			isa = PBXTargetDependency;
 			target = FA6D3C021C122760007302C2 /* SwiftLLDB */;
 			targetProxy = FA6D3C6E1C1309B8007302C2 /* PBXContainerItemProxy */;
+		};
+		FA6D3CBC1C135467007302C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA6D3C021C122760007302C2 /* SwiftLLDB */;
+			targetProxy = FA6D3CBB1C135467007302C2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
