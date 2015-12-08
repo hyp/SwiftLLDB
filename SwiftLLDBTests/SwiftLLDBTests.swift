@@ -14,15 +14,19 @@ extension NSPipe {
 }
 
 class SwiftLLDBTests: XCTestCase {
-    
+    private var isSetUp = false
+
+    deinit {
+        if isSetUp {
+            SBDebugger.tearDown()
+        }
+    }
+
     override func setUp() {
         super.setUp()
-        SBDebugger.setUp()
-    }
-    
-    override func tearDown() {
-        SBDebugger.tearDown()
-        super.tearDown()
+        if !isSetUp {
+            SBDebugger.setUp()
+        }
     }
     
     func testREPL() {
@@ -48,5 +52,25 @@ class SwiftLLDBTests: XCTestCase {
         
         XCTAssertEqual(result, "Line 0\r\nLine 1\r\nLine 2\r\nLine 3\r\nLine 4\r\n")
     }
-    
+
+    func testREPLEndOfOutput() {
+        let d = SBDebugger()
+        let inputPipe = NSPipe()
+        let input = inputPipe.fileHandleForWriting
+        input.writeData("for i in 0..<5 { print(\"Line \\(i)\") }\n\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+        input.closeFile()
+        let outputPipe = NSPipe()
+        outputPipe.fileHandleForWriting.writeData("test\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+        do {
+            try d.setInputFileHandle(inputPipe.fileHandleForReading)
+            try d.setOutputFileHandle(outputPipe.fileHandleForWriting)
+            try d.runREPL(.Swift, options: "")
+            outputPipe.fileHandleForWriting.closeFile()
+        } catch {
+            print("REPL failure: \(error)")
+            XCTFail()
+        }
+        let result = outputPipe.readString()
+        XCTAssertEqual(result, "test\nLine 0\r\nLine 1\r\nLine 2\r\nLine 3\r\nLine 4\r\n")
+    }
 }

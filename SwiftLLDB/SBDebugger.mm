@@ -28,47 +28,36 @@
     return debugger.GetAsync();
 }
 
-/// A helper method that duplicates the provided file handle and returns
-/// a pointer to a C FILE that owns the duplicated file handle.
-FILE *dupFileHanle(NSFileHandle *fileHandle, const char *mode, NSError **error) {
-    int fd = dup([fileHandle fileDescriptor]);
-    if (fd == -1) {
-        if (error) {
-            *error = [NSError errorWithDomain:NSPOSIXErrorDomain
-                                         code:errno
-                                     userInfo:@{ NSLocalizedDescriptionKey: @"Failed to get the file descriptor" }];
-        }
-        return NULL;
-    }
-    FILE *inputFile = fdopen(fd, mode);
+/// A helper method that returns a pointer to a C FILE for that file handle.
+FILE *openFileHanle(NSFileHandle *fileHandle, const char *mode, NSError **error) {
+    FILE *inputFile = fdopen([fileHandle fileDescriptor], mode);
     if (!inputFile) {
         if (error) {
             *error = [NSError errorWithDomain:NSPOSIXErrorDomain
                                          code:errno
                                      userInfo:@{ NSLocalizedDescriptionKey: @"Failed to open the file descriptor" }];
         }
-        close(fd);
         return NULL;
     }
     return inputFile;
 }
 
 - (BOOL) setInputFileHandle: (nonnull NSFileHandle *)fileHandle error:(NSError **)error {
-    FILE *f = dupFileHanle(fileHandle, "r", error);
+    FILE *f = openFileHanle(fileHandle, "r", error);
     if (!f) { return NO; }
     debugger.SetInputFileHandle(f, /*transfer_ownership=*/true);
     return YES;
 }
 
 - (BOOL) setOutputFileHandle: (nonnull NSFileHandle *)fileHandle error:(NSError **)error {
-    FILE *f = dupFileHanle(fileHandle, "w", error);
+    FILE *f = openFileHanle(fileHandle, "w", error);
     if (!f) { return NO; }
     debugger.SetOutputFileHandle(f, /*transfer_ownership=*/true);
     return YES;
 }
 
 - (BOOL) setErrorFileHandle: (nonnull NSFileHandle *)fileHandle error:(NSError **)error {
-    FILE *f = dupFileHanle(fileHandle, "w", error);
+    FILE *f = openFileHanle(fileHandle, "w", error);
     if (!f) { return NO; }
     debugger.SetErrorFileHandle(f, /*transfer_ownership=*/true);
     return YES;
