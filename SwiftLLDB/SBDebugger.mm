@@ -4,6 +4,8 @@
 //
 
 #import "SBDebugger.h"
+#import "SBTarget.h"
+#import "SBTarget+Private.h"
 #include "LLDB/LLDB.h"
 #include "LLDB/SBDebugger.h"
 #include <stdio.h>
@@ -61,6 +63,28 @@ FILE *openFileHanle(NSFileHandle *fileHandle, const char *mode, NSError **error)
     if (!f) { return NO; }
     debugger.SetErrorFileHandle(f, /*transfer_ownership=*/false);
     return YES;
+}
+
+- (NSInteger) getNumTargets {
+    return (NSInteger)debugger.GetNumTargets();
+}
+
+- (SBTarget *) getSelectedTarget {
+    SBTarget *target = [[SBTarget alloc] init];
+    lldb::SBTarget llTarget = debugger.GetSelectedTarget();
+    [target setTarget: &llTarget];
+    return target;
+}
+
+- (SBTarget *) getTargetAtIndex: (NSInteger)index {
+    SBTarget *target = [[SBTarget alloc] init];
+    lldb::SBTarget llTarget  = debugger.GetTargetAtIndex((uint32_t)index);
+    [target setTarget: &llTarget];
+    return target;
+}
+
+- (void) handleCommand: (NSString *)command {
+    debugger.HandleCommand([command UTF8String]);
 }
 
 - (void) runCommandInterpreter: (BOOL)autoHandleEvents spawnThread:(BOOL)spawnThread {

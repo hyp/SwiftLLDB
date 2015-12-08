@@ -5,6 +5,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class SBTarget;
+
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, LanguageType) {
@@ -19,6 +21,11 @@ typedef NS_ENUM(NSUInteger, LanguageType) {
 - (BOOL) setOutputFileHandle: (NSFileHandle *)fileHandle error:(NSError **)error;
 - (BOOL) setErrorFileHandle: (NSFileHandle *)fileHandle error:(NSError **)error;
 
+@property (readonly, nonatomic, getter=getNumTargets) NSInteger numTargets;
+@property (readonly, nonatomic, getter=getSelectedTarget) SBTarget *selectedTarget;
+- (SBTarget *) getTargetAtIndex: (NSInteger)index;
+
+- (void) handleCommand: (NSString *)command;
 - (void) runCommandInterpreter: (BOOL)autoHandleEvents spawnThread:(BOOL)spawnThread;
 - (BOOL) runREPL: (LanguageType)languageType options:(NSString *)replOptions error:(NSError **)error;
 
