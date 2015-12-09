@@ -16,6 +16,7 @@ typedef NS_ENUM(NSUInteger, LanguageType) {
 @interface SBDebugger : NSObject
 
 @property (nonatomic, getter=isAsync) BOOL async;
+@property (readonly, nonatomic) BOOL isValid;
 
 - (BOOL) setInputFileHandle: (NSFileHandle *)fileHandle error:(NSError **)error;
 - (BOOL) setOutputFileHandle: (NSFileHandle *)fileHandle error:(NSError **)error;

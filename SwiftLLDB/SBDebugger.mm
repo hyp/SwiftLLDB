@@ -30,6 +30,10 @@
     return debugger.GetAsync();
 }
 
+- (BOOL) isValid {
+    return debugger.IsValid();
+}
+
 /// A helper method that returns a pointer to a C FILE for that file handle.
 FILE *openFileHanle(NSFileHandle *fileHandle, const char *mode, NSError **error) {
     FILE *inputFile = fdopen([fileHandle fileDescriptor], mode);
