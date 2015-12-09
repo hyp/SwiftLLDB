@@ -83,6 +83,10 @@ FILE *openFileHanle(NSFileHandle *fileHandle, const char *mode, NSError **error)
     return target;
 }
 
+- (void) clear {
+    debugger.Clear();
+}
+
 - (void) handleCommand: (NSString *)command {
     debugger.HandleCommand([command UTF8String]);
 }

@@ -25,6 +25,7 @@ typedef NS_ENUM(NSUInteger, LanguageType) {
 @property (readonly, nonatomic, getter=getSelectedTarget) SBTarget *selectedTarget;
 - (SBTarget *) getTargetAtIndex: (NSInteger)index;
 
+- (void) clear;
 - (void) handleCommand: (NSString *)command;
 - (void) runCommandInterpreter: (BOOL)autoHandleEvents spawnThread:(BOOL)spawnThread;
 - (BOOL) runREPL: (LanguageType)languageType options:(NSString *)replOptions error:(NSError **)error;
