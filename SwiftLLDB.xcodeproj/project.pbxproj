@@ -24,6 +24,8 @@
 		FAC032321C17726C00977783 /* SBThread.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAC0322F1C17726C00977783 /* SBThread.mm */; };
 		FAC0323B1C1780F800977783 /* SBBreakpoint.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAC032381C1780F800977783 /* SBBreakpoint.mm */; };
 		FAC0323C1C1780F800977783 /* SBBreakpoint.h in Headers */ = {isa = PBXBuildFile; fileRef = FAC032391C1780F800977783 /* SBBreakpoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAC032421C18349200977783 /* SBAddress.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAC0323F1C18349200977783 /* SBAddress.mm */; };
+		FAC032441C18349200977783 /* SBAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = FAC032411C18349200977783 /* SBAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,9 @@
 		FAC032381C1780F800977783 /* SBBreakpoint.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SBBreakpoint.mm; sourceTree = "<group>"; };
 		FAC032391C1780F800977783 /* SBBreakpoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBBreakpoint.h; sourceTree = "<group>"; };
 		FAC0323A1C1780F800977783 /* SBBreakpoint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SBBreakpoint+Private.h"; sourceTree = "<group>"; };
+		FAC0323F1C18349200977783 /* SBAddress.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SBAddress.mm; sourceTree = "<group>"; };
+		FAC032401C18349200977783 /* SBAddress+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SBAddress+Private.h"; sourceTree = "<group>"; };
+		FAC032411C18349200977783 /* SBAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBAddress.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +149,9 @@
 		FA6D3C051C122760007302C2 /* SwiftLLDB */ = {
 			isa = PBXGroup;
 			children = (
+				FAC0323F1C18349200977783 /* SBAddress.mm */,
+				FAC032401C18349200977783 /* SBAddress+Private.h */,
+				FAC032411C18349200977783 /* SBAddress.h */,
 				FAC032381C1780F800977783 /* SBBreakpoint.mm */,
 				FAC032391C1780F800977783 /* SBBreakpoint.h */,
 				FAC0323A1C1780F800977783 /* SBBreakpoint+Private.h */,
@@ -191,6 +199,7 @@
 			files = (
 				FA6D3C501C130350007302C2 /* SBDebugger.h in Headers */,
 				FAC032141C17602B00977783 /* SBTarget.h in Headers */,
+				FAC032441C18349200977783 /* SBAddress.h in Headers */,
 				FAC0321A1C1761F100977783 /* SBProcess.h in Headers */,
 				FAC032311C17726C00977783 /* SBThread.h in Headers */,
 				FAC0322D1C17710300977783 /* Enumerations.h in Headers */,
@@ -322,6 +331,7 @@
 				FAC032321C17726C00977783 /* SBThread.mm in Sources */,
 				FAC032191C1761F100977783 /* SBProcess.mm in Sources */,
 				FAC0323B1C1780F800977783 /* SBBreakpoint.mm in Sources */,
+				FAC032421C18349200977783 /* SBAddress.mm in Sources */,
 				FA6D3C521C130360007302C2 /* SBDebugger.mm in Sources */,
 				FAC032111C17543D00977783 /* SBTarget.mm in Sources */,
 			);
