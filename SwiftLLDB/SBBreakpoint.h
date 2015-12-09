@@ -5,6 +5,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class SBAddress;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SBBreakpointLocation : NSObject
@@ -12,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) NSInteger breakpointLocationId;
 @property (readonly, nonatomic) BOOL isValid;
 @property (readonly, nonatomic) BOOL isResolved;
+@property (readonly, nonatomic) SBAddress *address;
 
 @end
 

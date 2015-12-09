@@ -5,6 +5,8 @@
 
 #import "SBBreakpoint.h"
 #import "SBBreakpoint+Private.h"
+#import "SBAddress.h"
+#import "SBAddress+Private.h"
 #include "LLDB/LLDB.h"
 #include "LLDB/SBBreakpoint.h"
 
@@ -28,6 +30,13 @@
 
 - (BOOL) isResolved {
     return location.IsResolved();
+}
+
+- (SBAddress *) address {
+    lldb::SBAddress llAddress = location.GetAddress();
+    SBAddress *address = [[SBAddress alloc] init];
+    [address setAddress:&llAddress];
+    return address;
 }
 
 @end
