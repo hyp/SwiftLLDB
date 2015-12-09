@@ -45,6 +45,7 @@ FILE *openFileHanle(NSFileHandle *fileHandle, const char *mode, NSError **error)
         }
         return NULL;
     }
+    setbuf(inputFile, NULL);
     return inputFile;
 }
 
