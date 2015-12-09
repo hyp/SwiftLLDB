@@ -31,6 +31,10 @@
     return process;
 }
 
+- (NSInteger) numBreakpoints {
+    return target.GetNumBreakpoints();
+}
+
 - (SBBreakpoint *) findBreakpointById: (NSInteger)breakId {
     lldb::SBBreakpoint llBr = target.FindBreakpointByID((lldb::break_id_t)breakId);
     SBBreakpoint *br = [[SBBreakpoint alloc] init];

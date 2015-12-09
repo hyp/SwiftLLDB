@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly, nonatomic) BOOL isValid;
 @property (readonly, nonatomic) SBProcess *process;
+@property (readonly, nonatomic) NSInteger numBreakpoints;
 
 - (SBBreakpoint *) findBreakpointById: (NSInteger)breakId;
 
