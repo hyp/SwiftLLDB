@@ -70,6 +70,10 @@
     return (NSInteger)breakpoint.GetHitCount();
 }
 
+- (NSInteger) numLocations {
+    return (NSInteger)breakpoint.GetNumLocations();
+}
+
 - (SBBreakpointLocation *) findLocationById:(NSInteger)locId {
     lldb::SBBreakpointLocation llLoc = breakpoint.FindLocationByID((lldb::break_id_t)locId);
     SBBreakpointLocation *loc = [[SBBreakpointLocation alloc] init];

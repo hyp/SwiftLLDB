@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) BOOL isOneShot;
 @property (readonly, nonatomic) BOOL isInternal;
 @property (readonly, nonatomic) NSInteger hitCount;
+@property (readonly, nonatomic) NSInteger numLocations;
 
 - (SBBreakpointLocation *) findLocationById: (NSInteger)locId;
 
