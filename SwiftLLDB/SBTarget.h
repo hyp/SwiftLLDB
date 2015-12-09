@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) SBProcess *process;
 @property (readonly, nonatomic) NSInteger numBreakpoints;
 
+- (SBBreakpoint *) breakpointCreateByLocation: (NSString *)file line:(NSInteger)line;
 - (SBBreakpoint *) findBreakpointById: (NSInteger)breakId;
 
 @end

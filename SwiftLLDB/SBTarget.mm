@@ -35,6 +35,13 @@
     return target.GetNumBreakpoints();
 }
 
+- (SBBreakpoint *) breakpointCreateByLocation: (NSString *)file line:(NSInteger)line {
+    lldb::SBBreakpoint llBr = target.BreakpointCreateByLocation([file UTF8String], (uint32_t)line);
+    SBBreakpoint *br = [[SBBreakpoint alloc] init];
+    [br setBreakpoint:&llBr];
+    return br;
+}
+
 - (SBBreakpoint *) findBreakpointById: (NSInteger)breakId {
     lldb::SBBreakpoint llBr = target.FindBreakpointByID((lldb::break_id_t)breakId);
     SBBreakpoint *br = [[SBBreakpoint alloc] init];
