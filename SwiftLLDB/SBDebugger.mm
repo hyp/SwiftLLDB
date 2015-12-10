@@ -81,7 +81,7 @@ FILE *openFileHandle(NSFileHandle *fileHandle, const char *mode, NSError **error
     return target;
 }
 
-- (SBTarget *) getTargetAtIndex: (NSInteger)index {
+- (SBTarget *) targetAtIndex: (NSInteger)index {
     SBTarget *target = [[SBTarget alloc] init];
     lldb::SBTarget llTarget  = debugger.GetTargetAtIndex((uint32_t)index);
     [target setTarget: &llTarget];

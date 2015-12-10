@@ -52,7 +52,7 @@
     return (NSInteger)thread.GetStopReasonDataCount();
 }
 
-- (uint64_t) getStopReasonDataAtIndex: (NSInteger)idx {
+- (uint64_t) stopReasonDataAtIndex: (NSInteger)idx {
     return thread.GetStopReasonDataAtIndex((uint32_t)idx);
 }
 

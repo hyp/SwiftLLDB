@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly, nonatomic) NSInteger numThreads;
 @property (readonly, nonatomic) SBThread *selectedThread;
-- (SBThread *) getThreadAtIndex: (NSInteger)idx;
+- (SBThread *) threadAtIndex: (NSInteger)idx;
 
 - (BOOL) destroy: (NSError **)error;
 

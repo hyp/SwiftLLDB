@@ -37,7 +37,7 @@
     return thread;
 }
 
-- (SBThread *) getThreadAtIndex: (NSInteger)idx {
+- (SBThread *) threadAtIndex: (NSInteger)idx {
     lldb::SBThread llThread = process.GetThreadAtIndex((size_t)idx);
     SBThread *thread = [[SBThread alloc] init];
     [thread setThread:&llThread];

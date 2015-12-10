@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) StopReason stopReason;
 @property (readonly, nonatomic) NSInteger stopReasonDataCount;
 
-- (uint64_t) getStopReasonDataAtIndex: (NSInteger)idx;
+- (uint64_t) stopReasonDataAtIndex: (NSInteger)idx;
 
 @end
 

@@ -24,7 +24,7 @@ typedef NS_ENUM(NSUInteger, LanguageType) {
 
 @property (readonly, nonatomic, getter=getNumTargets) NSInteger numTargets;
 @property (readonly, nonatomic, getter=getSelectedTarget) SBTarget *selectedTarget;
-- (SBTarget *) getTargetAtIndex: (NSInteger)index;
+- (SBTarget *) targetAtIndex: (NSInteger)index;
 
 - (void) clear;
 - (void) handleCommand: (NSString *)command;
