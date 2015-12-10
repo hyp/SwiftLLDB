@@ -37,7 +37,7 @@
 }
 
 - (SBBreakpoint *) breakpointCreateByLocation: (NSString *)file line:(NSInteger)line {
-    lldb::SBBreakpoint llBr = target.BreakpointCreateByLocation([file UTF8String], (uint32_t)line);
+    lldb::SBBreakpoint llBr = target.BreakpointCreateByLocation([file fileSystemRepresentation], (uint32_t)line);
     SBBreakpoint *br = [[SBBreakpoint alloc] init];
     [br setBreakpoint:&llBr];
     return br;
