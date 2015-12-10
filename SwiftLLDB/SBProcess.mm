@@ -15,6 +15,7 @@
 }
 
 - (void) setProcess: (void *)p {
+    assert(p);
     process = *(lldb::SBProcess *)p;
 }
 

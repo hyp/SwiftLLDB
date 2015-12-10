@@ -17,6 +17,7 @@
 }
 
 - (void) setBreakpointLocation:(void *)p {
+    assert(p);
     location = *(lldb::SBBreakpointLocation *)p;
 }
 
@@ -48,6 +49,7 @@
 }
 
 - (void) setBreakpoint:(void *)p {
+    assert(p);
     breakpoint = *(lldb::SBBreakpoint *)p;
 }
 

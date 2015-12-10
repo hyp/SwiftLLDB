@@ -15,6 +15,7 @@
 }
 
 - (void) setLineEntry: (void *)p {
+    assert(p);
     lineEntry = *(lldb::SBLineEntry *)p;
 }
 
@@ -44,6 +45,7 @@
 }
 
 - (void) setAddress: (void *)p {
+    assert(p);
     address = *(lldb::SBAddress *)p;
 }
 

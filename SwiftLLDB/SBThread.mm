@@ -13,6 +13,7 @@
 }
 
 - (void) setThread: (void *)p {
+    assert(p);
     thread = *(lldb::SBThread *)p;
 }
 

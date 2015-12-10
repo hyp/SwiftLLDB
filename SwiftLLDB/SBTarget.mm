@@ -17,6 +17,7 @@
 }
 
 - (void) setTarget: (void *)p {
+    assert(p);
     target = *(lldb::SBTarget *)p;
 }
 
