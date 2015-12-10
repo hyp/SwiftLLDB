@@ -55,7 +55,7 @@
 
 - (SBLineEntry *) lineEntry {
     lldb::SBLineEntry llEntry = address.GetLineEntry();
-    SBLineEntry *entry = [[SBLineEntry alloc] init];
+    SBLineEntry *entry = [SBLineEntry new];
     [entry setLineEntry:&llEntry];
     return entry;
 }
