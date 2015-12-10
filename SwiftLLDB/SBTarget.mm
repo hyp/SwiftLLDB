@@ -28,7 +28,7 @@
 - (SBProcess *) process {
     SBProcess *process = [SBProcess new];
     lldb::SBProcess llProcess = target.GetProcess();
-    [process setProcess: &llProcess];
+    process.process = &llProcess;
     return process;
 }
 
@@ -39,14 +39,14 @@
 - (SBBreakpoint *) breakpointCreateByLocation: (NSString *)file line:(NSInteger)line {
     lldb::SBBreakpoint llBr = target.BreakpointCreateByLocation([file fileSystemRepresentation], (uint32_t)line);
     SBBreakpoint *br = [SBBreakpoint new];
-    [br setBreakpoint:&llBr];
+    br.breakpoint = &llBr;
     return br;
 }
 
 - (SBBreakpoint *) findBreakpointById: (NSInteger)breakId {
     lldb::SBBreakpoint llBr = target.FindBreakpointByID((lldb::break_id_t)breakId);
     SBBreakpoint *br = [SBBreakpoint new];
-    [br setBreakpoint:&llBr];
+    br.breakpoint = &llBr;
     return br;
 }
 

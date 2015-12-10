@@ -34,14 +34,14 @@
 - (SBThread *) selectedThread {
     lldb::SBThread llThread = process.GetSelectedThread();
     SBThread *thread = [SBThread new];
-    [thread setThread:&llThread];
+    thread.thread = &llThread;
     return thread;
 }
 
 - (SBThread *) threadAtIndex: (NSInteger)idx {
     lldb::SBThread llThread = process.GetThreadAtIndex((size_t)idx);
     SBThread *thread = [SBThread new];
-    [thread setThread:&llThread];
+    thread.thread = &llThread;
     return thread;
 }
 

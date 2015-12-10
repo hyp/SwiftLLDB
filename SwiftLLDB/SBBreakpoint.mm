@@ -36,7 +36,7 @@
 - (SBAddress *) address {
     lldb::SBAddress llAddress = location.GetAddress();
     SBAddress *address = [SBAddress new];
-    [address setAddress:&llAddress];
+    address.address = &llAddress;
     return address;
 }
 
@@ -88,7 +88,7 @@
 - (SBBreakpointLocation *) findLocationById:(NSInteger)locId {
     lldb::SBBreakpointLocation llLoc = breakpoint.FindLocationByID((lldb::break_id_t)locId);
     SBBreakpointLocation *loc = [SBBreakpointLocation new];
-    [loc setBreakpointLocation:&llLoc];
+    loc.breakpointLocation = &llLoc;
     return loc;
 }
 

@@ -77,14 +77,14 @@ FILE *openFileHandle(NSFileHandle *fileHandle, const char *mode, NSError **error
 - (SBTarget *) getSelectedTarget {
     SBTarget *target = [SBTarget new];
     lldb::SBTarget llTarget = debugger.GetSelectedTarget();
-    [target setTarget: &llTarget];
+    target.target = &llTarget;
     return target;
 }
 
 - (SBTarget *) targetAtIndex: (NSInteger)index {
     SBTarget *target = [SBTarget new];
-    lldb::SBTarget llTarget  = debugger.GetTargetAtIndex((uint32_t)index);
-    [target setTarget: &llTarget];
+    lldb::SBTarget llTarget = debugger.GetTargetAtIndex((uint32_t)index);
+    target.target = &llTarget;
     return target;
 }
 
