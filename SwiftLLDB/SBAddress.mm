@@ -11,12 +11,7 @@
 // Mark - Line Entry
 
 @implementation SBLineEntry {
-    lldb::SBLineEntry lineEntry;
-}
-
-- (void) setLineEntry: (void *)p {
-    assert(p);
-    lineEntry = *(lldb::SBLineEntry *)p;
+    @package lldb::SBLineEntry lineEntry;
 }
 
 - (BOOL) isValid {
@@ -54,9 +49,8 @@
 }
 
 - (SBLineEntry *) lineEntry {
-    lldb::SBLineEntry llEntry = address.GetLineEntry();
     SBLineEntry *entry = [SBLineEntry new];
-    [entry setLineEntry:&llEntry];
+    entry->lineEntry = address.GetLineEntry();
     return entry;
 }
 

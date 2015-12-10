@@ -7,12 +7,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SBLineEntry()
-
-- (void) setLineEntry: (void *)p;
-
-@end
-
 @interface SBAddress()
 
 - (void) setAddress: (void *)p;
