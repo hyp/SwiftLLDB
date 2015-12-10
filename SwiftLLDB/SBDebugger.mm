@@ -35,7 +35,7 @@
 }
 
 /// A helper method that returns a pointer to a C FILE for that file handle.
-FILE *openFileHanle(NSFileHandle *fileHandle, const char *mode, NSError **error) {
+FILE *openFileHandle(NSFileHandle *fileHandle, const char *mode, NSError **error) {
     FILE *inputFile = fdopen([fileHandle fileDescriptor], mode);
     if (!inputFile) {
         if (error) {
@@ -50,21 +50,21 @@ FILE *openFileHanle(NSFileHandle *fileHandle, const char *mode, NSError **error)
 }
 
 - (BOOL) setInputFileHandle: (nonnull NSFileHandle *)fileHandle error:(NSError **)error {
-    FILE *f = openFileHanle(fileHandle, "r", error);
+    FILE *f = openFileHandle(fileHandle, "r", error);
     if (!f) { return NO; }
     debugger.SetInputFileHandle(f, /*transfer_ownership=*/false);
     return YES;
 }
 
 - (BOOL) setOutputFileHandle: (nonnull NSFileHandle *)fileHandle error:(NSError **)error {
-    FILE *f = openFileHanle(fileHandle, "w", error);
+    FILE *f = openFileHandle(fileHandle, "w", error);
     if (!f) { return NO; }
     debugger.SetOutputFileHandle(f, /*transfer_ownership=*/false);
     return YES;
 }
 
 - (BOOL) setErrorFileHandle: (nonnull NSFileHandle *)fileHandle error:(NSError **)error {
-    FILE *f = openFileHanle(fileHandle, "w", error);
+    FILE *f = openFileHandle(fileHandle, "w", error);
     if (!f) { return NO; }
     debugger.SetErrorFileHandle(f, /*transfer_ownership=*/false);
     return YES;
