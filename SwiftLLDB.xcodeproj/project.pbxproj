@@ -15,6 +15,8 @@
 		FA6D3C6B1C1309B8007302C2 /* SwiftLLDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6D3C6A1C1309B8007302C2 /* SwiftLLDBTests.swift */; };
 		FA6D3C6D1C1309B8007302C2 /* SwiftLLDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6D3C031C122760007302C2 /* SwiftLLDB.framework */; };
 		FA6D3CBA1C1353F3007302C2 /* LLDB.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA6D3C531C130439007302C2 /* LLDB.framework */; };
+		FA95A01B1C1B544B003E0135 /* SBFrame.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA95A0181C1B544B003E0135 /* SBFrame.mm */; };
+		FA95A01D1C1B544B003E0135 /* SBFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = FA95A01A1C1B544B003E0135 /* SBFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAC032111C17543D00977783 /* SBTarget.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAC032101C17543D00977783 /* SBTarget.mm */; };
 		FAC032141C17602B00977783 /* SBTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = FAC032121C17544A00977783 /* SBTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAC032191C1761F100977783 /* SBProcess.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAC032161C1761F100977783 /* SBProcess.mm */; };
@@ -80,6 +82,9 @@
 		FA6D3C681C1309B8007302C2 /* SwiftLLDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftLLDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6D3C6A1C1309B8007302C2 /* SwiftLLDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftLLDBTests.swift; sourceTree = "<group>"; };
 		FA6D3C6C1C1309B8007302C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA95A0181C1B544B003E0135 /* SBFrame.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SBFrame.mm; sourceTree = "<group>"; };
+		FA95A0191C1B544B003E0135 /* SBFrame+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SBFrame+Private.h"; sourceTree = "<group>"; };
+		FA95A01A1C1B544B003E0135 /* SBFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBFrame.h; sourceTree = "<group>"; };
 		FAC032101C17543D00977783 /* SBTarget.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SBTarget.mm; sourceTree = "<group>"; };
 		FAC032121C17544A00977783 /* SBTarget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTarget.h; sourceTree = "<group>"; };
 		FAC032131C17588200977783 /* SBTarget+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SBTarget+Private.h"; sourceTree = "<group>"; };
@@ -149,6 +154,9 @@
 		FA6D3C051C122760007302C2 /* SwiftLLDB */ = {
 			isa = PBXGroup;
 			children = (
+				FA95A0181C1B544B003E0135 /* SBFrame.mm */,
+				FA95A0191C1B544B003E0135 /* SBFrame+Private.h */,
+				FA95A01A1C1B544B003E0135 /* SBFrame.h */,
 				FAC0323F1C18349200977783 /* SBAddress.mm */,
 				FAC032401C18349200977783 /* SBAddress+Private.h */,
 				FAC032411C18349200977783 /* SBAddress.h */,
@@ -203,6 +211,7 @@
 				FAC0321A1C1761F100977783 /* SBProcess.h in Headers */,
 				FAC032311C17726C00977783 /* SBThread.h in Headers */,
 				FAC0322D1C17710300977783 /* Enumerations.h in Headers */,
+				FA95A01D1C1B544B003E0135 /* SBFrame.h in Headers */,
 				FAC0323C1C1780F800977783 /* SBBreakpoint.h in Headers */,
 				FA6D3C071C122760007302C2 /* SwiftLLDB.h in Headers */,
 			);
@@ -330,6 +339,7 @@
 			files = (
 				FAC032321C17726C00977783 /* SBThread.mm in Sources */,
 				FAC032191C1761F100977783 /* SBProcess.mm in Sources */,
+				FA95A01B1C1B544B003E0135 /* SBFrame.mm in Sources */,
 				FAC0323B1C1780F800977783 /* SBBreakpoint.mm in Sources */,
 				FAC032421C18349200977783 /* SBAddress.mm in Sources */,
 				FA6D3C521C130360007302C2 /* SBDebugger.mm in Sources */,

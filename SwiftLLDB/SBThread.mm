@@ -5,6 +5,8 @@
 
 #import "SBThread.h"
 #import "SBThread+Private.h"
+#import "SBFrame.h"
+#import "SBFrame+Private.h"
 #include "LLDB/LLDB.h"
 #include "LLDB/SBThread.h"
 
@@ -55,6 +57,24 @@
 
 - (uint64_t) stopReasonDataAtIndex: (NSInteger)idx {
     return thread.GetStopReasonDataAtIndex((uint32_t)idx);
+}
+
+- (NSInteger) numFrames {
+    return (NSInteger)thread.GetNumFrames();
+}
+
+- (SBFrame *) selectedFrame {
+    lldb::SBFrame llFrame = thread.GetSelectedFrame();
+    SBFrame *frame = [SBFrame new];
+    frame.frame = &llFrame;
+    return frame;
+}
+
+- (SBFrame *) frameAtIndex: (NSInteger)idx {
+    lldb::SBFrame llFrame = thread.GetFrameAtIndex((uint32_t)idx);
+    SBFrame *frame = [SBFrame new];
+    frame.frame = &llFrame;
+    return frame;
 }
 
 @end

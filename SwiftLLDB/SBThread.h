@@ -6,6 +6,8 @@
 #import "Enumerations.h"
 #import <Foundation/Foundation.h>
 
+@class SBFrame;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SBThread : NSObject
@@ -18,6 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) NSInteger stopReasonDataCount;
 
 - (uint64_t) stopReasonDataAtIndex: (NSInteger)idx;
+
+@property (readonly, nonatomic) NSInteger numFrames;
+@property (readonly, nonatomic) SBFrame *selectedFrame;
+- (SBFrame *) frameAtIndex: (NSInteger) idx;
 
 @end
 
