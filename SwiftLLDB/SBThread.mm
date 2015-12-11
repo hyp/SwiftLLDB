@@ -1,5 +1,5 @@
 //
-//  SBTarget.mm
+//  SBThread.mm
 //  SwiftLLDB
 //
 
