@@ -17,6 +17,8 @@
 		FA6D3CBA1C1353F3007302C2 /* LLDB.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA6D3C531C130439007302C2 /* LLDB.framework */; };
 		FA95A01B1C1B544B003E0135 /* SBFrame.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA95A0181C1B544B003E0135 /* SBFrame.mm */; };
 		FA95A01D1C1B544B003E0135 /* SBFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = FA95A01A1C1B544B003E0135 /* SBFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA95A0221C1B6E60003E0135 /* SBValue.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA95A01F1C1B6E60003E0135 /* SBValue.mm */; };
+		FA95A0241C1B6E60003E0135 /* SBValue.h in Headers */ = {isa = PBXBuildFile; fileRef = FA95A0211C1B6E60003E0135 /* SBValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAC032111C17543D00977783 /* SBTarget.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAC032101C17543D00977783 /* SBTarget.mm */; };
 		FAC032141C17602B00977783 /* SBTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = FAC032121C17544A00977783 /* SBTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAC032191C1761F100977783 /* SBProcess.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAC032161C1761F100977783 /* SBProcess.mm */; };
@@ -85,6 +87,9 @@
 		FA95A0181C1B544B003E0135 /* SBFrame.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SBFrame.mm; sourceTree = "<group>"; };
 		FA95A0191C1B544B003E0135 /* SBFrame+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SBFrame+Private.h"; sourceTree = "<group>"; };
 		FA95A01A1C1B544B003E0135 /* SBFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBFrame.h; sourceTree = "<group>"; };
+		FA95A01F1C1B6E60003E0135 /* SBValue.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SBValue.mm; sourceTree = "<group>"; };
+		FA95A0201C1B6E60003E0135 /* SBValue+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SBValue+Private.h"; sourceTree = "<group>"; };
+		FA95A0211C1B6E60003E0135 /* SBValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBValue.h; sourceTree = "<group>"; };
 		FAC032101C17543D00977783 /* SBTarget.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SBTarget.mm; sourceTree = "<group>"; };
 		FAC032121C17544A00977783 /* SBTarget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTarget.h; sourceTree = "<group>"; };
 		FAC032131C17588200977783 /* SBTarget+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SBTarget+Private.h"; sourceTree = "<group>"; };
@@ -154,6 +159,9 @@
 		FA6D3C051C122760007302C2 /* SwiftLLDB */ = {
 			isa = PBXGroup;
 			children = (
+				FA95A01F1C1B6E60003E0135 /* SBValue.mm */,
+				FA95A0201C1B6E60003E0135 /* SBValue+Private.h */,
+				FA95A0211C1B6E60003E0135 /* SBValue.h */,
 				FA95A0181C1B544B003E0135 /* SBFrame.mm */,
 				FA95A0191C1B544B003E0135 /* SBFrame+Private.h */,
 				FA95A01A1C1B544B003E0135 /* SBFrame.h */,
@@ -211,6 +219,7 @@
 				FAC0321A1C1761F100977783 /* SBProcess.h in Headers */,
 				FAC032311C17726C00977783 /* SBThread.h in Headers */,
 				FAC0322D1C17710300977783 /* Enumerations.h in Headers */,
+				FA95A0241C1B6E60003E0135 /* SBValue.h in Headers */,
 				FA95A01D1C1B544B003E0135 /* SBFrame.h in Headers */,
 				FAC0323C1C1780F800977783 /* SBBreakpoint.h in Headers */,
 				FA6D3C071C122760007302C2 /* SwiftLLDB.h in Headers */,
@@ -341,6 +350,7 @@
 				FAC032191C1761F100977783 /* SBProcess.mm in Sources */,
 				FA95A01B1C1B544B003E0135 /* SBFrame.mm in Sources */,
 				FAC0323B1C1780F800977783 /* SBBreakpoint.mm in Sources */,
+				FA95A0221C1B6E60003E0135 /* SBValue.mm in Sources */,
 				FAC032421C18349200977783 /* SBAddress.mm in Sources */,
 				FA6D3C521C130360007302C2 /* SBDebugger.mm in Sources */,
 				FAC032111C17543D00977783 /* SBTarget.mm in Sources */,

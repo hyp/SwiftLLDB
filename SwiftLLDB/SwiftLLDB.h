@@ -19,3 +19,4 @@ FOUNDATION_EXPORT const unsigned char SwiftLLDBVersionString[];
 #import "SBBreakpoint.h"
 #import "SBAddress.h"
 #import "SBFrame.h"
+#import "SBValue.h"
