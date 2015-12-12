@@ -19,6 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) BOOL isInScope;
 @property (readonly, nonatomic) BOOL isDynamic;
 @property (readonly, nonatomic) BOOL isSynthetic;
+@property (readonly, nonatomic) NSString *value;
+
+- (int64_t) valueAsSigned;
+- (uint64_t) valueAsUnsigned;
 
 @end
 

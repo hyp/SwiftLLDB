@@ -59,6 +59,19 @@
     return value.IsSynthetic();
 }
 
+- (NSString *) value {
+    const char *str = value.GetValue();
+    return [NSString stringWithUTF8String:(str ? str : "")];
+}
+
+- (int64_t) valueAsSigned {
+    return value.GetValueAsSigned();
+}
+
+- (uint64_t) valueAsUnsigned {
+    return value.GetValueAsUnsigned();
+}
+
 @end
 
 @implementation SBValueList {
