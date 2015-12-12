@@ -64,6 +64,11 @@
     return [NSString stringWithUTF8String:(str ? str : "")];
 }
 
+- (NSString *) objectDescription {
+    const char *str = value.GetObjectDescription();
+    return [NSString stringWithUTF8String:(str ? str : "")];
+}
+
 - (int64_t) valueAsSigned {
     return value.GetValueAsSigned();
 }
