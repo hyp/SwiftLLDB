@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (int64_t) valueAsSigned;
 - (uint64_t) valueAsUnsigned;
+- (float) valueAsFloat;
+- (double) valueAsDouble;
 
 @end
 

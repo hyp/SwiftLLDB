@@ -72,6 +72,26 @@
     return value.GetValueAsUnsigned();
 }
 
+- (float) valueAsFloat {
+    lldb::SBData data = value.GetData();
+    lldb::SBError error;
+    float result = data.GetFloat(error, 0);
+    if (error.Success()) {
+        return result;
+    }
+    return 0.0f;
+}
+
+- (double) valueAsDouble {
+    lldb::SBData data = value.GetData();
+    lldb::SBError error;
+    float result = data.GetDouble(error, 0);
+    if (error.Success()) {
+        return result;
+    }
+    return 0.0;
+}
+
 @end
 
 @implementation SBValueList {
