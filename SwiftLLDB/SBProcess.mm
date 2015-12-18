@@ -60,5 +60,9 @@
     return NO;
 }
 
+- (void) sendAsyncInterrupt {
+    process.SendAsyncInterrupt();
+}
+
 @end
 

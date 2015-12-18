@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (SBThread *) threadAtIndex: (NSInteger)idx;
 
 - (BOOL) destroy: (NSError **)error;
+- (void) sendAsyncInterrupt;
 
 @end
 
