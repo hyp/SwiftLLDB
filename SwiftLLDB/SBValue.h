@@ -21,11 +21,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) BOOL isSynthetic;
 @property (readonly, nonatomic) NSString *value;
 @property (readonly, nonatomic) NSString *objectDescription;
+@property (readonly, nonatomic) NSInteger numChildren;
+@property (readonly, nonatomic) BOOL isTypeFunctionType;
 
 - (int64_t) valueAsSigned;
 - (uint64_t) valueAsUnsigned;
 - (float) valueAsFloat;
 - (double) valueAsDouble;
+
+- (SBValue *) childAtIndex: (NSInteger)idx;
 
 @end
 

@@ -69,6 +69,14 @@
     return [NSString stringWithUTF8String:(str ? str : "")];
 }
 
+- (NSInteger) numChildren {
+    return (NSInteger)value.GetNumChildren();
+}
+
+- (BOOL) isTypeFunctionType {
+    return value.GetType().IsFunctionType();
+}
+
 - (int64_t) valueAsSigned {
     return value.GetValueAsSigned();
 }
@@ -95,6 +103,13 @@
         return result;
     }
     return 0.0;
+}
+
+- (SBValue *) childAtIndex: (NSInteger)idx {
+    lldb::SBValue llValue = value.GetChildAtIndex((uint32_t)idx);
+    SBValue *child = [SBValue new];
+    child.value = &llValue;
+    return child;
 }
 
 @end
