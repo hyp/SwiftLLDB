@@ -8,6 +8,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface SBDeclaration : NSObject
+
+@property (readonly, nonatomic) BOOL isValid;
+@property (readonly, nonatomic) NSInteger line;
+@property (readonly, nonatomic) NSInteger column;
+@property (readonly, nonatomic) NSString *filename;
+
+@end
+
 @interface SBValue : NSObject
 
 @property (readonly, nonatomic) BOOL isValid;
@@ -23,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) NSString *objectDescription;
 @property (readonly, nonatomic) NSInteger numChildren;
 @property (readonly, nonatomic) BOOL isTypeFunctionType;
+@property (readonly, nonatomic) SBDeclaration *declaration;
 
 - (int64_t) valueAsSigned;
 - (uint64_t) valueAsUnsigned;

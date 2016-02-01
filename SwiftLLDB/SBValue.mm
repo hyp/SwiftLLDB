@@ -8,6 +8,34 @@
 #include "LLDB/LLDB.h"
 #include "LLDB/SBThread.h"
 
+@implementation SBDeclaration {
+    lldb::SBDeclaration declaration;
+}
+
+- (void) setDeclaration: (void *)p {
+    assert(p);
+    declaration = *(lldb::SBDeclaration *)p;
+}
+
+- (BOOL) isValid {
+    return declaration.IsValid();
+}
+
+- (NSInteger) line {
+    return declaration.GetLine();
+}
+
+- (NSInteger) column {
+    return declaration.GetColumn();
+}
+
+- (NSString *) filename {
+    lldb::SBFileSpec fs = declaration.GetFileSpec();
+    return fs.IsValid() ? [NSString stringWithUTF8String:fs.GetFilename()] : [NSString new];
+}
+
+@end
+
 @implementation SBValue {
     lldb::SBValue value;
 }
@@ -75,6 +103,13 @@
 
 - (BOOL) isTypeFunctionType {
     return value.GetType().IsFunctionType();
+}
+
+- (SBDeclaration *) declaration {
+    lldb::SBDeclaration llDecl = value.GetDeclaration();
+    SBDeclaration *decl = [SBDeclaration new];
+    decl.declaration = &llDecl;
+    return decl;
 }
 
 - (int64_t) valueAsSigned {

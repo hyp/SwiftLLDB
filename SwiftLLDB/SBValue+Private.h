@@ -7,6 +7,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface SBDeclaration()
+
+- (void) setDeclaration: (void *)p;
+
+@end
+
 @interface SBValue()
 
 - (void) setValue: (void *)p;
