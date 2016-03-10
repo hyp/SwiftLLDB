@@ -88,6 +88,13 @@ FILE *openFileHandle(NSFileHandle *fileHandle, const char *mode, NSError **error
     return target;
 }
 
+- (SBTarget *) createTarget: (NSString *)filename {
+    lldb::SBTarget llTarget = debugger.CreateTarget([filename UTF8String]);
+    SBTarget *target = [SBTarget new];
+    target.target = &llTarget;
+    return target;
+}
+
 - (void) clear {
     debugger.Clear();
 }
