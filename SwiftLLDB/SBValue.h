@@ -32,6 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) NSString *objectDescription;
 @property (readonly, nonatomic) NSInteger numChildren;
 @property (readonly, nonatomic) BOOL isTypeFunctionType;
+@property (readonly, nonatomic) BOOL isTypeStructType;
+@property (readonly, nonatomic) BOOL isTypeUnionType;
+@property (readonly, nonatomic) BOOL isTypeClassType;
 @property (readonly, nonatomic) SBDeclaration *declaration;
 
 - (int64_t) valueAsSigned;

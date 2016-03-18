@@ -105,6 +105,18 @@
     return value.GetType().IsFunctionType();
 }
 
+- (BOOL) isTypeStructType {
+    return value.GetType().GetTypeClass() == lldb::eTypeClassStruct;
+}
+
+- (BOOL) isTypeUnionType {
+    return value.GetType().GetTypeClass() == lldb::eTypeClassUnion;
+}
+
+- (BOOL) isTypeClassType {
+    return value.GetType().GetTypeClass() == lldb::eTypeClassClass;
+}
+
 - (SBDeclaration *) declaration {
     lldb::SBDeclaration llDecl = value.GetDeclaration();
     SBDeclaration *decl = [SBDeclaration new];
