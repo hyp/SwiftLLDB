@@ -26,6 +26,7 @@ typedef NS_ENUM(NSUInteger, LanguageType) {
 @property (readonly, nonatomic, getter=getSelectedTarget) SBTarget *selectedTarget;
 - (SBTarget *) targetAtIndex: (NSInteger)index;
 - (SBTarget *) createTargetWithFilename: (NSString *)filename;
+- (BOOL) deleteTarget: (SBTarget *)target;
 
 - (void) clear;
 - (void) handleCommand: (NSString *)command;

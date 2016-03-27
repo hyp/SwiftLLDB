@@ -4,13 +4,13 @@
 //
 
 #import "SBTarget.h"
-#import "SBTarget+Private.h"
 #import "SBProcess.h"
 #import "SBProcess+Private.h"
 #import "SBBreakpoint.h"
 #import "SBBreakpoint+Private.h"
 #include "LLDB/LLDB.h"
 #include "LLDB/SBTarget.h"
+#import "SBTarget+Private.h"
 
 @implementation SBTarget {
     lldb::SBTarget target;
@@ -19,6 +19,10 @@
 - (void) setTarget: (void *)p {
     assert(p);
     target = *(lldb::SBTarget *)p;
+}
+
+- (lldb::SBTarget &) getTarget {
+    return target;
 }
 
 - (BOOL) isValid {

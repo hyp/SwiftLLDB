@@ -5,9 +5,10 @@
 
 #import "SBDebugger.h"
 #import "SBTarget.h"
-#import "SBTarget+Private.h"
 #include "LLDB/LLDB.h"
 #include "LLDB/SBDebugger.h"
+#include "LLDB/SBTarget.h"
+#import "SBTarget+Private.h"
 #include <stdio.h>
 
 @implementation SBDebugger {
@@ -93,6 +94,10 @@ FILE *openFileHandle(NSFileHandle *fileHandle, const char *mode, NSError **error
     SBTarget *target = [SBTarget new];
     target.target = &llTarget;
     return target;
+}
+
+- (BOOL) deleteTarget: (SBTarget *)target {
+    return debugger.DeleteTarget([target getTarget]);
 }
 
 - (void) clear {
