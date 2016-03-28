@@ -16,6 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface SBSymbolContext : NSObject
+
+@property (readonly, nonatomic) BOOL isValid;
+@property (readonly, nonatomic) SBLineEntry *lineEntry;
+
+@end
+
 @interface SBAddress : NSObject
 
 @property (readonly, nonatomic) BOOL isValid;

@@ -4,9 +4,10 @@
 //
 
 #import "SBAddress.h"
-#import "SBAddress+Private.h"
 #include "LLDB/LLDB.h"
 #include "LLDB/SBTarget.h"
+#include "LLDB/SBSymbolContext.h"
+#import "SBAddress+Private.h"
 
 // Mark - Line Entry
 
@@ -29,6 +30,29 @@
 
 - (NSInteger) column {
     return (NSInteger)lineEntry.GetColumn();
+}
+
+@end
+
+// Mark - Symbol Context
+
+@implementation SBSymbolContext {
+    lldb::SBSymbolContext symbolContext;
+}
+
+- (void) setSymbolContext: (lldb::SBSymbolContext *)p {
+    assert(p);
+    symbolContext = *p;
+}
+
+- (BOOL) isValid {
+    return symbolContext.IsValid();
+}
+
+- (SBLineEntry *) lineEntry {
+    SBLineEntry *entry = [SBLineEntry new];
+    entry->lineEntry = symbolContext.GetLineEntry();
+    return entry;
 }
 
 @end

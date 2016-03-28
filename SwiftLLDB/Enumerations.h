@@ -34,3 +34,13 @@ typedef NS_ENUM(NSUInteger, StopReason) {
     StopReasonThreadExiting,
     StopReasonInstrumentation
 };
+
+typedef NS_OPTIONS (NSUInteger, SymbolContextItem) {
+    SymbolContextItemTarget = 1 << 0,
+    SymbolContextItemModule = 1 << 1,
+    SymbolContextItemCompilationUnit = 1 << 2,
+    SymbolContextItemFunction = 1 << 3,
+    SymbolContextItemBlock = 1 << 4,
+    SymbolContextItemLineEntry = 1 << 5,
+    SymbolContextItemSymbol = 1 << 6
+};

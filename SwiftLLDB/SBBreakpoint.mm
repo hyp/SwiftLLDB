@@ -6,9 +6,9 @@
 #import "SBBreakpoint.h"
 #import "SBBreakpoint+Private.h"
 #import "SBAddress.h"
-#import "SBAddress+Private.h"
 #include "LLDB/LLDB.h"
 #include "LLDB/SBBreakpoint.h"
+#import "SBAddress+Private.h"
 
 // Mark - Location
 
