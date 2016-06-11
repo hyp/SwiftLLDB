@@ -61,7 +61,10 @@
 
 - (NSString *) typeName {
     const char *str = value.GetTypeName();
-    assert(str);
+    // LLDB's typename can be nil.
+    if (!str) {
+        return @"";
+    }
     return [NSString stringWithUTF8String:str];
 }
 
